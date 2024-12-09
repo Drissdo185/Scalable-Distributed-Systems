@@ -2,7 +2,7 @@
 
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Access http://localhost:9001
