@@ -7,7 +7,7 @@ from pyspark.ml.feature import Imputer, StringIndexer, OneHotEncoder, VectorAsse
 
 # Run full cores
 spark = SparkSession.builder \
-    .appName("LoanDefaultPrediction") \
+    .appName("Bronze to Silver bucket") \
     .config("spark.hadoop.fs.s3a.access.key", os.getenv("MINIO_USERNAME")) \
     .config("spark.hadoop.fs.s3a.secret.key", os.getenv("MINIO_PASSWORD")) \
     .config("spark.hadoop.fs.s3a.endpoint", "http://localhost:9000")\
