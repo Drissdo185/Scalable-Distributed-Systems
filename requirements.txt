@@ -3,3 +3,4 @@ python-dotenv==1.0.0
 pyspark==3.5.3
 numpy
 kafka-python
+Faker
