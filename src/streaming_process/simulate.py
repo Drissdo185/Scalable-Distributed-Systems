@@ -75,5 +75,5 @@ class LoanSimulator:
 
 if __name__ == "__main__":
     simulator = LoanSimulator()
-    simulator.simulate_stream(interval=10)
+    simulator.simulate_stream(interval=1)
     
