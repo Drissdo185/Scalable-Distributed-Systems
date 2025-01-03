@@ -75,7 +75,7 @@ if __name__ == "__main__":
     minio_username = os.getenv("MINIO_USERNAME")
     minio_password = os.getenv("MINIO_PASSWORD")
     silver_bucket_path = "s3a://sliver/preprocessed_loan_data"
-    model_path = "/home/drissdo/Desktop/Scalable-Distributed-Systems/ML/model"
+    model_path = "/home/drissdo/Desktop/Scalable-Distributed-Systems/loan_default_lr_model"
 
     # Create Spark session, train model, and save it
     spark = create_spark_session(app_name, minio_username, minio_password)

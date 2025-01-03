@@ -15,16 +15,15 @@ class LoanSimulator:
         )
         self.topic = topic
         
-        
-        self.age_range = (18, 75)
-        self.income_range = (20000, 200000)
-        self.loan_amount_range = (5000, 100000)
+        self.age_range = (18, 100)
+        self.income_range = (1000, 100000)
+        self.loan_amount_range = (500, 50000)
         self.credit_score_range = (300, 850)
-        self.months_employed_range = (0, 480)
-        self.education_levels = ['High School', 'Bachelor', 'Master', 'PhD']
-        self.employment_types = ['Full-time', 'Part-time', 'Self-employed', 'Unemployed']
-        self.marital_status = ['Single', 'Married', 'Divorced']
-        self.loan_purposes = ['Home', 'Other', 'Education', 'Business', 'Auto']
+        self.months_employed_range = (0, 600)
+        self.num_credit_lines_range = (1, 20)
+        self.interest_rate_range = (0, 30)
+        self.loan_term_range = (6, 360)
+        self.dti_ratio_range = (0, 100)
     
     def generate_loan_application(self):
         loan_data = {
@@ -34,18 +33,11 @@ class LoanSimulator:
             'LoanAmount': random.randint(*self.loan_amount_range),
             'CreditScore': random.randint(*self.credit_score_range),
             'MonthsEmployed': random.randint(*self.months_employed_range),
-            'NumCreditLines': random.randint(0, 10),
-            'InterestRate': round(random.uniform(5, 25), 2),
-            'LoanTerm': random.choice([12, 24, 36, 48, 60]),
-            'DTIRatio': round(random.uniform(0, 0.5), 2),
-            'Education': random.choice(self.education_levels),
-            'EmploymentType': random.choice(self.employment_types),
-            'MaritalStatus': random.choice(self.marital_status),
-            'HasMortgage': random.choice(['Yes', 'No']),
-            'HasDependents': random.choice(['Yes', 'No']),
-            'LoanPurpose': random.choice(self.loan_purposes),
-            'HasCoSigner': random.choice(['Yes', 'No']),
-            # 'Default': random.choice([0, 1])
+            'NumCreditLines': random.randint(*self.num_credit_lines_range),
+            'InterestRate': random.uniform(*self.interest_rate_range),
+            'LoanTerm': random.randint(*self.loan_term_range),
+            'DTIRatio': random.uniform(*self.dti_ratio_range),
+            
         }
         return loan_data
 
@@ -75,5 +67,5 @@ class LoanSimulator:
 
 if __name__ == "__main__":
     simulator = LoanSimulator()
-    simulator.simulate_stream(interval=1)
+    simulator.simulate_stream(interval=10)
     
