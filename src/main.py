@@ -8,7 +8,7 @@ from pyspark.sql import Row
 spark = SparkSession.builder.appName("Loan Default Streamlit").getOrCreate()
 
 # Load the Model
-model = LogisticRegressionModel.load("/app/loan_default_lr_model")
+model = LogisticRegressionModel.load("/home/drissdo/Desktop/Scalable-Distributed-Systems/lr_model")
 
 # Streamlit Interface
 st.title("Loan Default Prediction")
